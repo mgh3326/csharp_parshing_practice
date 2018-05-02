@@ -11,7 +11,11 @@ namespace html_agility_pack_practice
     {
         static void Main(string[] args)
         {
-            var html = @"http://html-agility-pack.net/";
+            var youtube_name = "오마이걸 반하나 - 바나나 알러지 원숭이 [세로라이브] OH MY GIRL BANHANA - Banana allergy monkey";
+
+
+
+            var html = @"http://search.mnet.com/search/index.asp?q=" + youtube_name;
 
             HtmlWeb web = new HtmlWeb();
 
@@ -20,7 +24,15 @@ namespace html_agility_pack_practice
             var node = htmlDoc.DocumentNode.SelectSingleNode("//head/title");
 
             Console.WriteLine("Node Name: " + node.Name + "\n" + node.OuterHtml);
-            Console.WriteLine(htmlDoc.DocumentNode.SelectSingleNode("//body").OuterHtml);
+
+
+            //Console.WriteLine(name.OuterHtml);
+            //foreach(var oh in htmlDoc.DocumentNode.SelectNodes("//*[@id='content_v']//*[@class='search_result_line']//*[@class='MnetMusicList MnetMusicListSearch']//*[@class='MMLTable']"))
+            //{
+            //    Console.WriteLine(oh.OuterHtml);
+            //}
+            Console.WriteLine(htmlDoc.DocumentNode.OuterHtml);
+            //Console.WriteLine(htmlDoc.DocumentNode.SelectSingleNode("//body").OuterHtml);
 
         }
     }
